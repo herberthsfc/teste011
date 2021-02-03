@@ -330,6 +330,17 @@ case 'lofi':
 			client.sendMessage(from, buffer, image, {quoted: mek, caption: `${teks}`})
 			await limitAdd(sender)
 			break
+			case 'nulis': 
+				case 'tulis':
+					if (args.length < 1) return reply('Hmmmm?')
+                                        if (!isUser) return reply(mess.only.daftarB)
+					teks = body.slice(7)
+					reply(mess.wait)
+					anu = await fetchJson(`https://tobz-api.herokuapp.com/api/nulis?text=${teks}&apikey=BotWeA`, {method: 'get'})
+					if (anu.error) return reply(anu.error)
+					buff = await getBuffer(anu.result)
+					client.sendMessage(from, buff, image, {quoted: mek, caption: mess.success})
+					break
                 case 'bug':
                 case 'reportar':
                 case 'reportarbug':
@@ -681,16 +692,16 @@ case 'lofi':
 					client.sendMessage(from, pok, image, { quoted: mek, caption: `*Aqui está a sua imagem!*`})
 					await limitAdd(sender)
 					break 
-					case 'pinterest':
-					if (!isGroup) return reply(mess.only.group)
+					case 'images':
+          tels = body.slice(11)
 					client.updatePresence(from, Presence.composing) 
-					data = await fetchJson(`https://api.fdci.se/rep.php?gambar=${body.slice(11)}`, {method: 'get'})
-					reply(ind.wait())
+					data = await fetchJson(`https://api.fdci.se/rep.php?gambar=${tels}`, {method: 'get'})
+          if (!isUser) return reply(mess.only.daftarB)
+					reply(mess.wait)
 					n = JSON.parse(JSON.stringify(data));
 					nimek =  n[Math.floor(Math.random() * n.length)];
 					pok = await getBuffer(nimek)
-					client.sendMessage(from, pok, image, { quoted: mek, caption: `*Aqui está a sua imagem!*`})
-					await limitAdd(sender)
+					client.sendMessage(from, pok, image, { quoted: mek, caption: `*PINTEREST*\n\*Hasil Pencarian* : *${tels}*`})
 					break
 					case 'blowjob':
 					if (!isGroupAdmins) return reply(mess.only.admin)
