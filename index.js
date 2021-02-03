@@ -851,15 +851,14 @@ case 'lofi':
 						client.groupRemove(from, mentioned)
 					}
 					break
-					case 'linkgroup':
-				case 'linkgrupo':
-				case 'gplink':
+					case 'linkgrup':
+				case 'linkgp':
 				    client.updatePresence(from, Presence.composing) 
 				    if (!isGroup) return reply(mess.only.group)
                                      if (!isUser) return reply(mess.only.daftarB)
 					if (!isBotGroupAdmins) return reply(mess.only.Badmin)
 					linkgc = await client.groupInviteCode (from)
-					yeh = `https://chat.whatsapp.com/${linkgc}\n\nLink Do Grupo *${groupName}*`
+					yeh = `https://chat.whatsapp.com/${linkgc}\n\nLink do grupo *${groupName}*`
 					client.sendMessage(from, yeh, text, {quoted: mek, detectLinks: false})
 					break
 				   case 'listadmins':
