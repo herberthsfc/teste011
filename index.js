@@ -22,6 +22,7 @@ const { help } = require('./lib/help')
 const { menu } = require('./lib/menu')
 const { menupremium } = require('./lib/menupremium')
 const { serpremium } = require('./lib/serpremium')
+const { idiomas } = require('./lib/idiomas')
 const { donasi } = require('./lib/donasi')
 const { fetchJson } = require('./lib/fetcher')
 const { recognize } = require('./lib/ocr')
@@ -224,6 +225,10 @@ client.on('group-participants-update', async (anu) => {
 				  case 'serpremium':
 				  if (isGroup) return  reply( 'Este comando não pode ser usado em grupos!')
 		      client.sendMessage(from, serpremium(prefix, sender), text, {quoted: mek})
+				  break
+				  case 'idiomas':
+					if (!isGroup) return reply(mess.only.group)
+					client.sendMessage(from, idiomas(prefix, sender), text, {quoted: mek})
 				  break
 				case 'donasi':
 				case 'donate':
@@ -665,7 +670,7 @@ case 'lofi':
                 client.sendMessage(from, buffer, image, {quoted: mek, caption: infomp3})
                 client.sendMessage(from, lagu, audio, {mimetype: 'audio/mp4', filename: `${anu.title}.mp3`, quoted: mek})
                 break
-					case 'pinterest':
+					case 'jshsp':
 					if (!isGroup) return reply(mess.only.group)
 					client.updatePresence(from, Presence.composing) 
 					data = await fetchJson(`https://api.fdci.se/rep.php?gambar=${body.slice(11)}`, {method: 'get'})
@@ -676,6 +681,17 @@ case 'lofi':
 					client.sendMessage(from, pok, image, { quoted: mek, caption: `*Aqui está a sua imagem!*`})
 					await limitAdd(sender)
 					break 
+					case 'pinterest':
+					if (!isGroup) return reply(mess.only.group)
+					client.updatePresence(from, Presence.composing) 
+					data = await fetchJson(`https://api.fdci.se/rep.php?gambar=${body.slice(11)}`, {method: 'get'})
+					reply(ind.wait())
+					n = JSON.parse(JSON.stringify(data));
+					nimek =  n[Math.floor(Math.random() * n.length)];
+					pok = await getBuffer(nimek)
+					client.sendMessage(from, pok, image, { quoted: mek, caption: `*Aqui está a sua imagem!*`})
+					await limitAdd(sender)
+					break
 					case 'blowjob':
 					if (!isGroupAdmins) return reply(mess.only.admin)
 					ranp = getRandom('.gif')
