@@ -222,7 +222,7 @@ client.on('group-participants-update', async (anu) => {
 					client.sendMessage(from, menu(prefix, sender), text, {quoted: mek})
 				  break
 				  case 'serpremium':
-				  if (isGroup) return  reply( 'Este comando não pode ser usado em grupos! Apenas no Pv!')
+				  if (isGroup) return  reply( 'Este comando não pode ser usado em grupos!')
 		      client.sendMessage(from, serpremium(prefix, sender), text, {quoted: mek})
 				  break
 				case 'donasi':
@@ -653,29 +653,29 @@ case 'lofi':
 						reply('*「 ✔️ 」 Sucesso!*')
 					}
 					break
-					case 'musica':   
-	        if (!isGroup) return reply(mess.only.group)
+					case 'play':   
+	        if (!isGroupAdmins) return reply(mess.only.admin)
                 reply(mess.wait)
                 play = body.slice(5)
                 anu = await fetchJson(`https://api.zeks.xyz/api/ytplaymp3?q=${play}&apikey=apivinz`)
                if (anu.error) return reply(anu.error)
-                 infomp3 = `*Musica encontrada!!*\nJudul : ${anu.result.title}\nFonte : ${anu.result.source}\nTamanho : ${anu.result.size}\n\n*ESPERE ENVIANDO POR FAVOR, NÃO SPAME!*`
+                 infomp3 = `*Musica encontrada!*\nNome : ${anu.result.title}\nLink : ${anu.result.source}\nTamanho : ${anu.result.size}\n\n*AGUARDE, POR FAVOR NÃO FLOODE!*`
                 buffer = await getBuffer(anu.result.thumbnail)
                 lagu = await getBuffer(anu.result.url_audio)
                 client.sendMessage(from, buffer, image, {quoted: mek, caption: infomp3})
                 client.sendMessage(from, lagu, audio, {mimetype: 'audio/mp4', filename: `${anu.title}.mp3`, quoted: mek})
                 break
-					case 'imagem':
-					if (!isGroupAdmins) return reply(mess.only.admin)
+					case 'pinterest':
+					if (!isGroup) return reply(mess.only.group)
 					client.updatePresence(from, Presence.composing) 
 					data = await fetchJson(`https://api.fdci.se/rep.php?gambar=${body.slice(11)}`, {method: 'get'})
 					reply(ind.wait())
 					n = JSON.parse(JSON.stringify(data));
 					nimek =  n[Math.floor(Math.random() * n.length)];
 					pok = await getBuffer(nimek)
-					client.sendMessage(from, pok, image, { quoted: mek, caption: `*Aqui está!*`})
+					client.sendMessage(from, pok, image, { quoted: mek, caption: `*Aqui está a sua imagem!*`})
 					await limitAdd(sender)
-					break
+					break 
 					case 'blowjob':
 					if (!isGroupAdmins) return reply(mess.only.admin)
 					ranp = getRandom('.gif')
@@ -691,6 +691,16 @@ case 'lofi':
 					})
 					await limitAdd(sender)
 					break
+					case 'wa.me':
+				  case 'wame':
+				  if (!isGroup) return reply(mess.only.group)
+          client.updatePresence(from, Presence.composing) 
+      options = {
+          text: `「 *WHATSAPP* 」\n\n_Solicitado por_ : *@${sender.split("@s.whatsapp.net")[0]}\n\nSeu link Whatsapp : *https://wa.me/${sender.split("@s.whatsapp.net")[0]}*\n*Or ( / )*\n*https://api.whatsapp.com/send?phone=${sender.split("@")[0]}*`,
+          contextInfo: { mentionedJid: [sender] }
+    }
+    client.sendMessage(from, options, text, { quoted: mek } )
+				break
 			   	case 'perfilgp': 
                         if (!isGroup) return reply(mess.only.group)
                        if (!isGroupAdmins) return reply(mess.only.admin)
@@ -721,10 +731,10 @@ case 'lofi':
 					if (!isGroupAdmins) return reply(mess.only.admin)
 					if (!isBotGroupAdmins) return reply(mess.only.Badmin)
 					if (args[0] === 'abrir') {
-					    reply(`*「 ✔️ 」 Grupo aberto para todos os membros!*`)
+					    reply(`*「 ✔️ Grupo aberto para todos os membros! 」*`)
 						client.groupSettingChange(from, GroupSettingChange.messageSend, false)
 					} else if (args[0] === 'fechar') {
-						reply(`*「 ❗ 」 Grupo fechado para membros comuns!*`)
+						reply(`*「 🔒 Grupo fechado para membros comuns! 」*`)
 						client.groupSettingChange(from, GroupSettingChange.messageSend, true)
 					}
 					break
