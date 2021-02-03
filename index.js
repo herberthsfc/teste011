@@ -223,7 +223,7 @@ client.on('group-participants-update', async (anu) => {
 				  break
 				  case 'serpremium':
 				  if (isGroup) return  reply( 'Este comando não pode ser usado em grupos! Apenas no Pv!')
-		      client.sendMessage(from, menupremium(prefix, sender), text, {quoted: mek})
+		      client.sendMessage(from, serpremium(prefix, sender), text, {quoted: mek})
 				  break
 				case 'donasi':
 				case 'donate':
