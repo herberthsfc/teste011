@@ -23,6 +23,8 @@ const { menu } = require('./lib/menu')
 const { menupremium } = require('./lib/menupremium')
 const { serpremium } = require('./lib/serpremium')
 const { gcpf } = require('./src/gcpf')
+const { porno } = require('./src/porno')
+const { bitches } = require('./src/bitches')
 const { idiomas } = require('./lib/idiomas')
 const { donasi } = require('./lib/donasi')
 const { fetchJson } = require('./lib/fetcher')
@@ -286,17 +288,23 @@ case 'lofi':
 					break
 					case 'gcpf':                                 client.sendMessage(from, gcpf(prefix), text, { quoted: mek })
                     break
+           case 'porno':
+             if (!isGroupAdmins) return reply(mess.only.admin)
+             client.sendMessage(from, porno(prefix), text, { quoted: mek })
+                    break
+           case 'bitches':
+             if (!isGroupAdmins) return reply(mess.only.admin)
+             client.sendMessage(from, bitches(prefix), text, { quoted: mek })
+                    break
 					case 'herberth':
 					memein = await kagApi.memeindo()
 					buffer = await getBuffer(`https://i.imgur.com/Pa8iwI4.jpg`)
 					client.sendMessage(from, buffer, image, {quoted: mek, caption: '*Gangster frio e calculista*'})
 					break
-					case 'santosfc':
-					if (!isGroupAdmins) return reply(mess.only.admin)
+					case 'baianor':
 					memein = await kagApi.memeindo()
-					buffer = await getBuffer(`https://i.imgur.com/QKGTDs7.jpg`)
-					client.sendMessage(from, buffer, image, {quoted: mek, caption: '*Nascer, viver e no Santos morrer! 🤍🖤* '})
-					break
+					buffer = await getBuffer(`https://i.imgur.com/oaJFGaX.jpg`)
+					client.sendMessage(from, buffer, image, {quoted: mek, caption: '*DDD 70,71,72,73,74,75,76,77😴*'})
 					case 'gado':
           if (args.length < 1) return reply('*Um gado foi detectado! Cuidado, ele não pode ver uma mulher!* 🐂')
           break
@@ -311,13 +319,6 @@ case 'lofi':
 					const hob =['Oi rsrs','Sim, Eu acho','Não sei dizer','Sefodê mlkkkkk','Por quê?','Sei lá','Eu não quero falar sobre isso','Foda-se','Voce é uma gostosa','kkkkkk','Não fala comigo','Pesquisa no google','Lixo','Meu pau','Eu acho que voce tentou ser engraçado(a)','Eu quero comer uma bolacha','Fdp','Corno','A verdade é que voce é corno','Vai se foder','Cala a boca vadia','Linda só verdades','Voce só me faz pergunta bosta','Estou triste, manda audio pelada','Não entendi o que você quis dizer']
 					const by = hob[Math.floor(Math.random() * hob.length)]
 					client.sendMessage(from, 'Pergunta : *'+hobby+'*\n\nResposta : '+ by, text, { quoted: mek })
-					break
-					case 'porno':
-					if (!isGroupAdmins) return reply(mess.only.admin)
-					hobby = body.slice(1)
-					const hob =['http://www.xvideos.com','http://www.xhamster.com','http://www.xnxx.com','http://www.pornhub.com','http://www.redtube.com','http://www.youporn.com','http://www.livejasmin.com','http://www.youjizz.com','http://www.tube8.com','http://www.pornoanaogay.com','http://www.e-hentai.org','http://www.beeg.com']
-					const by = hob[Math.floor(Math.random() * hob.length)]
-					client.sendMessage(from, 'Carregando... *'+hobby+'*\n\nLink ✔️ : '+ by, text, { quoted: mek })
 					break
 					case 'moddroid':
 				  if (!isGroup) return reply(mess.only.group)
