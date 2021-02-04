@@ -305,6 +305,7 @@ case 'lofi':
 					memein = await kagApi.memeindo()
 					buffer = await getBuffer(`https://i.imgur.com/oaJFGaX.jpg`)
 					client.sendMessage(from, buffer, image, {quoted: mek, caption: '*DDD 70,71,72,73,74,75,76,77😴*'})
+					break
 					case 'gado':
           if (args.length < 1) return reply('*Um gado foi detectado! Cuidado, ele não pode ver uma mulher!* 🐂')
           break
@@ -339,7 +340,7 @@ case 'lofi':
 			await limitAdd(sender)
 			break
 			case 'gay':
-					if (isUser) return reply(mess.only.daftarB)
+		  if (!isGroup) return reply(mess.only.group)
 					cantik = body.slice(1)
 					const can =['9','15','27','45','50','60','70','62','74','83','97','100','29','94','75','82','41','39']
 					const tik = can[Math.floor(Math.random() * can.length)]
