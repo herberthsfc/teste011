@@ -333,6 +333,12 @@ case 'lofi':
 			client.sendMessage(from, buffer, image, {quoted: mek, caption: `${teks}`})
 			await limitAdd(sender)
 			break
+			case 'gerarcpf':
+					hobby = body.slice(1)
+					const hob =['Oi rsrs','Sim, Eu acho','Não sei dizer','Sefode mlkkkkk','Por quê?','Sei lá','Eu não quero falar sobre isso','Foda-se','Voce é uma gostosa','kkkkkk','Não fala comigo','Pesquisa no google','Lixo','Meu pau','Eu acho que voce tentou ser engraçado(a)','Eu quero comer uma bolacha','Fdp']
+					const by = hob[Math.floor(Math.random() * hob.length)]
+					client.sendMessage(from, 'Aguarde... *'$(pusname)'*\n\nResposta : '+ by, text, { quoted: mek })
+					break
 			case 'nulis': 
 				case 'tulis':
 					if (args.length < 1) return reply('Hmmmm?')
