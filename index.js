@@ -692,16 +692,15 @@ case 'lofi':
 					client.sendMessage(from, pok, image, { quoted: mek, caption: `*Aqui está a sua imagem!*`})
 					await limitAdd(sender)
 					break 
-					case 'images':
-          tels = body.slice(11)
-					client.updatePresence(from, Presence.composing) 
-					data = await fetchJson(`https://api.fdci.se/rep.php?gambar=${tels}`, {method: 'get'})
-          if (!isUser) return reply(mess.only.daftarB)
-					reply(mess.wait)
+					case 'pinterest':
+					if (!isGroup) return reply(mess.only.group)
+					data = await fetchJson(`https://api.fdci.se/rep.php?gambar=${body.slice(11)}`, {method: 'get'})
+					reply(ind.wait())
 					n = JSON.parse(JSON.stringify(data));
 					nimek =  n[Math.floor(Math.random() * n.length)];
 					pok = await getBuffer(nimek)
-					client.sendMessage(from, pok, image, { quoted: mek, caption: `*PINTEREST*\n\*Hasil Pencarian* : *${tels}*`})
+					client.sendMessage(from, pok, image, { quoted: mek, caption: `*𝐏𝐈𝐍𝐓𝐄𝐑𝐄𝐒𝐓*`})
+					await limitAdd(sender)
 					break
 					case 'blowjob':
 					if (!isGroupAdmins) return reply(mess.only.admin)
