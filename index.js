@@ -233,8 +233,8 @@ client.on('group-participants-update', async (anu) => {
 					if (!isGroup) return reply(mess.only.group)
 					client.sendMessage(from, idiomas(prefix, sender), text, {quoted: mek})
 				  break
-				case 'donasi':
-				case 'donate':
+				case 'donhj':
+				case 'djjh':
 					client.sendMessage(from, donasi(), text)
 				break
 				case 'infhfrg':
