@@ -23,7 +23,6 @@ const { menu } = require('./lib/menu')
 const { menupremium } = require('./lib/menupremium')
 const { serpremium } = require('./lib/serpremium')
 const { gcpf } = require('./src/gcpf')
-const { bitches } = require('./src/bitches')
 const { idiomas } = require('./lib/idiomas')
 const { donasi } = require('./lib/donasi')
 const { fetchJson } = require('./lib/fetcher')
@@ -287,10 +286,6 @@ case 'lofi':
 					break
 					case 'gcpf':                                 client.sendMessage(from, gcpf(prefix), text, { quoted: mek })
                     break
-           case 'bitches':
-             if (!isGroupAdmins) return reply(mess.only.admin)
-             client.sendMessage(from, bitches(prefix), text, { quoted: mek })
-                    break
 					case 'herberth':
 					memein = await kagApi.memeindo()
 					buffer = await getBuffer(`https://i.imgur.com/Pa8iwI4.jpg`)
@@ -302,6 +297,7 @@ case 'lofi':
 					client.sendMessage(from, buffer, image, {quoted: mek, caption: '*DDD 70,71,72,73,74,75,76,77😴*'})
 					break
 					case 'porno':
+					if (!isGroupAdmins) return reply(mess.only.admin)
 					memein = await kagApi.memeindo()
 					buffer = await getBuffer(`https://i.imgur.com/5U2V0yW.jpg`)
 					client.sendMessage(from, buffer, image, {quoted: mek, caption: '*o adm liberou porno no gp*😳 \naproveite com moderação! hihi\n\n1- www.xvideos.com\n2- www.xhamster.com\n3- www.xnxx.com\n4- www.pornhub.com\n5- www.redtube.com\n6- www.youporn.com\n7- www.snapdo.com\n8- www.livejasmin.com\n9- www.youjizz.com\n10- www.tube8.com\n11- www.dmm.co.jp\n12- www.hardsextube.com\n13- www.e-hentai.org\n14- www.beeg.com'})
