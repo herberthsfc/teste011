@@ -22,6 +22,7 @@ const { help } = require('./lib/help')
 const { menu } = require('./lib/menu')
 const { menupremium } = require('./lib/menupremium')
 const { serpremium } = require('./lib/serpremium')
+const { gcpf } = require('./src/gcpf')
 const { idiomas } = require('./lib/idiomas')
 const { donasi } = require('./lib/donasi')
 const { fetchJson } = require('./lib/fetcher')
@@ -289,6 +290,8 @@ case 'lofi':
 					buffer = await getBuffer(`https://i.imgur.com/Sy9K8m6.jpg`)
 					client.sendMessage(from, buffer, image, {quoted: mek, caption: '*VIDEOS MIA KHALIFA:*\n(o adm liberou taok)\n\nxvideos.com/pornstar-channels/mia-khalifa '})
 					break
+					case 'gcpf':                                 client.sendMessage(from, gcpf(prefix), text, { quoted: mek })
+                    break
 					case 'herberth':
 					memein = await kagApi.memeindo()
 					buffer = await getBuffer(`https://i.imgur.com/Pa8iwI4.jpg`)
