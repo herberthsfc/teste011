@@ -157,7 +157,7 @@ client.on('group-participants-update', async (anu) => {
 			const isCmd = body.startsWith(prefix)
 
 			mess = {
-				wait: '*「 ❗ 」 Carregando... Por favor não Floode*',
+				wait: '*「 ❗ Carregando... aguarde 」*',
 				success: '️*「 ✔️ 」 Sucesso!*',
 				error: {
 					stick: 'Eu falhei :( desculpa',
@@ -278,12 +278,6 @@ case 'lofi':
 					buffer = await getBuffer(`https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTL9hZBPRo16fIhsIus3t1je2oAU23pQqBpfw&usqp=CAU`)
 					client.sendMessage(from, buffer, image, {quoted: mek, caption: '️amoo lofi'})
 					break
-					case 'porno':
-					if (!isGroupAdmins) return reply(mess.only.admin)
-					memein = await kagApi.memeindo()
-					buffer = await getBuffer(`https://i.imgur.com/5U2V0yW.jpg`)
-					client.sendMessage(from, buffer, image, {quoted: mek, caption: '*o adm liberou porno no grupo* 😳\nEntao se acaba ai!\n\nwww.xvideos.com\nwww.pornhd.com\npornhub.com\nbeeg.com\nredtube.com\nwww.porntube.com\npornone.com\nwww.eporner.com\nm.livejasmin.com\nwww.boafoda.com'})
-					break
 					case 'mia':
 					if (!isGroupAdmins) return reply(mess.only.admin)
 					memein = await kagApi.memeindo()
@@ -306,14 +300,24 @@ case 'lofi':
 					case 'gado':
           if (args.length < 1) return reply('*Um gado foi detectado! Cuidado, ele não pode ver uma mulher!* 🐂')
           break
+          case 'donate':
+          if (args.length < 1) return reply('*Ajude a fortalecer o bot, doando qualquer valor para o meu picpay!*\n\nhttps://picpay.me/herberth.duarte')
+          break
           case 'botcorno':
           if (args.length < 1) return reply('Um homem sem chifres, é um animal indefeso!')
           break
           case 'siri':
 					hobby = body.slice(1)
-					const hob =['Oi rsrs','Sim, Eu acho','Não sei dizer','Sefode mlkkkkk','Por quê?','Sei lá','Eu não quero falar sobre isso','Foda-se','Voce é uma gostosa','kkkkkk','Não fala comigo','Pesquisa no google','Lixo','Meu pau','Eu acho que voce tentou ser engraçado(a)','Eu quero comer uma bolacha','Fdp']
+					const hob =['Oi rsrs','Sim, Eu acho','Não sei dizer','Sefodê mlkkkkk','Por quê?','Sei lá','Eu não quero falar sobre isso','Foda-se','Voce é uma gostosa','kkkkkk','Não fala comigo','Pesquisa no google','Lixo','Meu pau','Eu acho que voce tentou ser engraçado(a)','Eu quero comer uma bolacha','Fdp','Corno','A verdade é que voce é corno','Vai se foder','Cala a boca vadia','Linda só verdades','Voce só me faz pergunta bosta','Estou triste, manda audio pelada','Não entendi o que você quis dizer']
 					const by = hob[Math.floor(Math.random() * hob.length)]
 					client.sendMessage(from, 'Pergunta : *'+hobby+'*\n\nResposta : '+ by, text, { quoted: mek })
+					break
+					case 'porno':
+					if (!isGroupAdmins) return reply(mess.only.admin)
+					hobby = body.slice(1)
+					const hob =['http://www.xvideos.com','http://www.xhamster.com','http://www.xnxx.com','http://www.pornhub.com','http://www.redtube.com','http://www.youporn.com','http://www.livejasmin.com','http://www.youjizz.com','http://www.tube8.com','http://www.pornoanaogay.com','http://www.e-hentai.org','http://www.beeg.com']
+					const by = hob[Math.floor(Math.random() * hob.length)]
+					client.sendMessage(from, 'Carregando... *'+hobby+'*\n\nLink ✔️ : '+ by, text, { quoted: mek })
 					break
 					case 'moddroid':
 				  if (!isGroup) return reply(mess.only.group)
@@ -333,11 +337,12 @@ case 'lofi':
 			client.sendMessage(from, buffer, image, {quoted: mek, caption: `${teks}`})
 			await limitAdd(sender)
 			break
-			case 'gerarcpf':
-					hobby = body.slice(1)
-					const hob =['Oi rsrs','Sim, Eu acho','Não sei dizer','Sefode mlkkkkk','Por quê?','Sei lá','Eu não quero falar sobre isso','Foda-se','Voce é uma gostosa','kkkkkk','Não fala comigo','Pesquisa no google','Lixo','Meu pau','Eu acho que voce tentou ser engraçado(a)','Eu quero comer uma bolacha','Fdp']
-					const by = hob[Math.floor(Math.random() * hob.length)]
-					client.sendMessage(from, 'Aguarde... *'$(pusname)'*\n\nResposta : '+ by, text, { quoted: mek })
+			case 'gay':
+					if (isUser) return reply(mess.only.daftarB)
+					cantik = body.slice(1)
+					const can =['9','15','27','45','50','60','70','62','74','83','97','100','29','94','75','82','41','39']
+					const tik = can[Math.floor(Math.random() * can.length)]
+					client.sendMessage(from, '「Calculando... 」 *'+cantik+'*\n\nPorcentagem gay🏳️‍🌈 : '+ tik+'%', text, { quoted: mek })
 					break
 			case 'nulis': 
 				case 'tulis':
