@@ -687,7 +687,7 @@ case 'lofi':
                 play = body.slice(5)
                 anu = await fetchJson(`https://api.zeks.xyz/api/ytplaymp3?q=${play}&apikey=apivinz`)
                if (anu.error) return reply(anu.error)
-                 infomp3 = `*「 Caso não seja a Música que procura, tente definir o título sem acentos. e por favor não floode! 」*\n\n「 ✔️ Música encontrada! 」*\n「 Título 」 ${anu.result.title}\n「 Link 」 ${anu.result.source}\n「 Tamanho 」 ${anu.result.size}\n「 Carregando, aguarde... 」\n\n𝙃𝘿𝘽𝙊𝙏.𝙚𝙭𝙚`
+                 infomp3 = `*「 Caso não seja a Música que procura, tente definir o título sem acentos. e por favor não floode! 」*\n\n*「 ✔️ Música encontrada! 」*\n*「 Título 」*${anu.result.title}\n*「 Link 」*${anu.result.source}\n*「 Tamanho 」 *${anu.result.size}\n\n*「 Carregando, aguarde... 」*\n\n*𝙃𝘿𝘽𝙊𝙏, o mais brabo, tá?*`
                 buffer = await getBuffer(anu.result.thumbnail)
                 lagu = await getBuffer(anu.result.url_audio)
                 client.sendMessage(from, buffer, image, {quoted: mek, caption: infomp3})
