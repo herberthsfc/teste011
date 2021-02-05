@@ -321,7 +321,7 @@ case 'lofi':
 				  if (!isGroup) return reply(mess.only.group)
 			data = await fetchJson(`https://tobz-api.herokuapp.com/api/moddroid?q=${body.slice(10)}&apikey=BotWeA`)
 			hepi = data.result[0] 
-			teks = `*Nome*: ${data.result[0].title}\n*Editor*: ${hepi.publisher}\n*Info Mod:* ${hepi.mod_info}\n*Tamanho*: ${hepi.size}\n*Última versão*: ${hepi.latest_version}\n*Gênero*: ${hepi.genre}\n*Link:* ${hepi.link}\n*Download*: ${hepi.download}`
+			teks = `*• Título*: ${data.result[0].title}\n\n*• Criador*: ${hepi.publisher}\n\n*• Mod:* ${hepi.mod_info}\n\n*• Peso*: ${hepi.size}\n\n*• Última versão*: ${hepi.latest_version}\n\n*• Gênero*: ${hepi.genre}\n\n*Link:* ${hepi.link}\n\n*Download*: ${hepi.download}`
 			buffer = await getBuffer(hepi.image)
 			client.sendMessage(from, buffer, image, {quoted: mek, caption: `${teks}`})
 			await limitAdd(sender)
@@ -687,7 +687,7 @@ case 'lofi':
                 play = body.slice(5)
                 anu = await fetchJson(`https://api.zeks.xyz/api/ytplaymp3?q=${play}&apikey=apivinz`)
                if (anu.error) return reply(anu.error)
-                 infomp3 = `*Musica encontrada!*\nNome : ${anu.result.title}\nLink : ${anu.result.source}\nTamanho : ${anu.result.size}\n\n*AGUARDE, POR FAVOR NÃO FLOODE!*`
+                 infomp3 = `*「 Caso não seja a Música que procura, tente definir o título sem acentos. e por favor não floode! 」*\n\n「 ✔️ Música encontrada! 」*\n「 Título 」 ${anu.result.title}\n「 Link 」 ${anu.result.source}\n「 Tamanho 」 ${anu.result.size}\n「 Carregando, aguarde... 」\n\n𝙃𝘿𝘽𝙊𝙏.𝙚𝙭𝙚`
                 buffer = await getBuffer(anu.result.thumbnail)
                 lagu = await getBuffer(anu.result.url_audio)
                 client.sendMessage(from, buffer, image, {quoted: mek, caption: infomp3})
