@@ -302,6 +302,11 @@ case 'lofi':
 					buffer = await getBuffer(`https://i.imgur.com/5U2V0yW.jpg`)
 					client.sendMessage(from, buffer, image, {quoted: mek, caption: '*o adm liberou porno no gp*😳 \naproveite com moderação! hihi\n\n1- www.xvideos.com\n2- www.xhamster.com\n3- www.xnxx.com\n4- www.pornhub.com\n5- www.redtube.com\n6- www.youporn.com\n7- www.snapdo.com\n8- www.livejasmin.com\n9- www.youjizz.com\n10- www.tube8.com\n11- www.dmm.co.jp\n12- www.hardsextube.com\n13- www.e-hentai.org\n14- www.beeg.com'})
 					break
+					case 'indio':
+					memein = await kagApi.memeindo()
+					buffer = await getBuffer(`https://i.imgur.com/5wVbBeh.jpg`)
+					client.sendMessage(from, buffer, image, {quoted: mek, caption: '*DDD 90,91,92,93,94,95,96,97,98,99*'})
+					break
 					case 'gado':
           if (args.length < 1) return reply('*Um gado foi detectado! Cuidado, ele não pode ver uma mulher!* 🐂')
           break
@@ -687,7 +692,7 @@ case 'lofi':
                 play = body.slice(5)
                 anu = await fetchJson(`https://api.zeks.xyz/api/ytplaymp3?q=${play}&apikey=apivinz`)
                if (anu.error) return reply(anu.error)
-                 infomp3 = `*「 Caso não seja a Música que procura, tente definir o título sem acentos. e por favor não floode! 」*\n\n*「 ✔️ Música encontrada! 」*\n*「 Título 」* ${anu.result.title}\n*「 Link 」* ${anu.result.source}\n*「 Peso 」* ${anu.result.size}\n\n*「 Carregando, aguarde... 」*\n\n*𝙃𝘿𝘽𝙊𝙏, o mais brabo, tá?*`
+                 infomp3 = `*「 Caso não seja a Música que procura, tente definir o título sem acentos. e por favor não floode! 」*\n\n*「 ✔ Música encontrada! 」*\n*「 Título 」* ${anu.result.title}\n*「 Peso 」* ${anu.result.size}\n\n*「 Carregando, aguarde... 」*\n\n*𝙃𝘿𝘽𝙊𝙏, o mais brabo, tá?*`
                 buffer = await getBuffer(anu.result.thumbnail)
                 lagu = await getBuffer(anu.result.url_audio)
                 client.sendMessage(from, buffer, image, {quoted: mek, caption: infomp3})
